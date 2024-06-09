@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai Aur Code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>/*
+    // setTimeout(function(){      //Not a core part of JS they are part of Browser
+    //  console.log('Yoshi');
+    // },2000)    
+    const sayYoshi = function(){     
+      console.log('Yoshi');
+     }  
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML= "Best course int the World"
+    }
+
+    setTimeout(sayYoshi, 2000)
+    const changeMe = setTimeout(changeText, 5000)
+
+    // clearTimeout(changeMe)   //It will clear referred the setTimeout
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED");
+    })
+
+    //const sayDate = function(str){
+    //     console.log(str, Date.now());
+    // }
+
+    const sayDate = document.querySelector('#start').addEventListener('click',function(){
+        console.log('Yoshi', Date.now());
+    })
+
+    const intervalId = setInterval(sayDate,1000, 'Yoshi')
+    clearInterval(intervalId)*/
+
+    const startButton = document.querySelector('#start');
+    const stopButton = document.querySelector('#stop');
+    let intervalId;
+
+    function startInterval() {
+        intervalId = setInterval(function() {
+            console.log('Yoshi', Date.now());
+        }, 1000);
+    }
+
+    function stopInterval() {
+        clearInterval(intervalId);
+        console.log("STOPPED");
+    }
+
+    startButton.addEventListener('click', startInterval);
+    stopButton.addEventListener('click', stopInterval);
+</script>
+</html>
